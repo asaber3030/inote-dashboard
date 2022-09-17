@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$blue-light: #3498db;
+$blue-dark: #2980b9;
+
+$green-light: #2ecc71;
+$green-dark: #27ae60;
+
+$wet-light: #2d3748;
+$wet-dark: #1a202c;
+
+$red-light: #e74c3c;
+$red-dark: #9a6b3b;
+
+$yellow-light: #FF8F00;
+$yellow-dark: #FF6F00;
+
+$move-light: #9b59b6;
+$move-dark: #8e44ad;
+
+$teal-light: #1abc9c;
+$teal-dark: #16a085;
+
+$fb: #3b5998;
+$twitter: #1da1f2;
+$linkedin: #0077b5;
+
+$bg: #111;
+$bg-light: #222;
+$navbar-bg: #222;
+$gray: gray;
+$light-gray: lightgray;
+
+$padding: 10px;
+$margin: 10px;
+
+$border-radius: 5px;
+
+$main-font: 'Inter', sans-serif;
+$code-font: 'Fira Code', monospace;
+
+$main-color: '';
+
+body {
+  font-family: $main-font;
+}
+
+.red-c {
+  color: $red-dark !important;
+}
+.blue-c {
+  color: $blue-dark !important;
+}
+.green-c {
+  color: $green-dark !important;
+}
+.yellow-c {
+  color: $yellow-dark !important;
+}
+.wet-c {
+  color: $wet-dark !important;
+}
+.pink-c {
+  color: $move-dark !important;
+}
+
+.red-border {
+  border: 1px solid $red-dark !important;
+}
+.blue-border {
+  border: 1px solid $blue-dark !important;
+}
+.yellow-border {
+  border: 1px solid $yellow-dark !important;
+}
+.wet-border {
+  border: 1px solid $wet-dark !important;
+}
+.pink-border {
+  border: 1px solid $move-dark !important;
+}
+@mixin boxShadow($blur: 10px, $color: #ddd) {
+  box-shadow: 0 2px $blur $color;
+}
+@mixin borderRadius($t: $border-radius, $r: $border-radius, $b: $border-radius, $l: $border-radius) {
+  border-radius: $t $r $b $l;
+}
+
+@mixin flexBox($justify-type: flex-start, $align-items-type: flex-start, $wrap-type: wrap) {
+  display: flex;
+  flex-wrap: #{$wrap-type};
+  justify-content: #{$justify-type};
+  align-items: #{$align-items-type};
+}
+
+@mixin transition($value: .25s ease-in-out) {
+  transition: $value;
+}
+
+@mixin bgOpacity($color, $value) {
+  background: transparentize($color, $value);
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px
+);
+
+%ell {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin mediaQuery($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+.inverse-img {
+  filter: invert(1);
+}
+.transRotate {
+  transform: rotate(180deg);
+}

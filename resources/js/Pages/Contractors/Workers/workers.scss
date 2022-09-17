@@ -1,0 +1,16 @@
+@import "../../../assets/css/helper";
+
+.contractor-information {
+  .list-all-data {
+    > h1 {
+      @include flexBox(space-between, center);
+      font-size: 22px !important;
+      margin: 10px 0 !important;
+      svg { margin-right: 5px }
+    }
+    .actions-datagrid {
+      @include flexBox();
+      gap: 5px;
+    }
+  }
+}

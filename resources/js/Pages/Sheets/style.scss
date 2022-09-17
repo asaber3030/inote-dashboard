@@ -1,0 +1,114 @@
+@import "../../assets/css/helper";
+
+.sheets-container {
+  .view-sheets {
+    padding: 10px 0;
+    table {
+      width: 100%;
+      background-color: #FFF;
+      border-radius: 5px;
+      tr {
+        display: flex;
+        align-items: center;
+        padding: 3px 15px;
+        th, td {
+          flex: 1;
+        }
+        &:last-of-type { margin-bottom: 5px !important; }
+        &.row-tr {
+          margin: 0 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 14px;
+          &:hover { background-color: #e6e6e6; }
+          td {
+            a { margin-left: 5px; }
+            .default-link {
+              color: $blue-light;
+              &:hover { text-decoration: underline; color: $blue-dark !important }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.filtering-data {
+  @include flexBox();
+  gap: 10px;
+  .form-group {
+    padding: 10px 0 0;
+    flex: 1;
+    label, select, input {
+      display: block;
+      width: 100%;
+    }
+    label { font-weight: 600 }
+  }
+}
+
+.no-data {
+  background-color: #FFF;
+  padding: 25px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #ddd;
+  text-align: center;
+  img {
+    width: 150px;
+    height: 150px;
+    margin: 25px auto;
+  }
+  h1 {
+    font-size: 25px;
+  }
+}
+
+.add-custom-sheet {
+  @include flexBox();
+  .left-filter {
+    flex: 1;
+    ul {
+      li {
+        @include boxShadow();
+        @include transition();
+        background-color: #FFF;
+        font-size: 18px;
+        text-align: center;
+        margin: 10px 0;
+        border-radius: 5px;
+        padding: 25px;
+        cursor: pointer;
+        &:hover {
+          background-color: #333;
+          color: #FFF;
+        }
+        &.active { background-color: #333; color: #FFF; }
+      }
+    }
+  }
+  .display-data {
+    flex: 4;
+    padding: 10px 30px;
+    h1 {
+      padding: 10px 0 0;
+      font-size: 22px;
+    }
+    .tab-content {
+      padding: 0 14px 18px;
+      p {
+        color: gray;
+        padding: 10px;
+      }
+      .form-group { margin: 10px 0; }
+
+    }
+    .open-data {
+      margin: 0 0 10px 0 !important;
+    }
+    .create-sheet-btn-container {
+      padding-top: 10px;
+      border-top: 1px solid #e5e5e5
+    }
+  }
+}

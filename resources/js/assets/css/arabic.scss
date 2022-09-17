@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+.app-body-arabic {
+  direction: ltr !important;
+  padding-right: 0;
+  padding-left: 13% !important;
+}
+
+.app-body-arabic {
+  direction: rtl !important;
+  padding-right: 13%;
+  padding-left: 0 !important;
+  * {
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .MuiSnackbar-root {
+    direction: ltr;
+    .MuiAlert-message { font-weight: bold !important; }
+  }
+
+  .btn { svg { margin-left: 5px; margin-right: 0 !important; } }
+  .actions {
+    svg { margin: 0 !important }
+  }
+
+  // SVG inside .btn
+
+  // Data grid footer
+  .MuiDataGrid-footerContainer { direction: ltr; }
+
+  // Data grid checkbox
+  .MuiDataGrid-cellCheckbox svg, .MuiSvgIcon-root { color: lightgray !important }
+
+  // Website Layout
+  .website-layout-arabic {
+    flex-direction: row-reverse !important;
+    .left {
+      right: 0;
+      border-left: 1px solid #333;
+      .sidebar-top {
+        border-bottom: 1px solid #333 !important;
+        direction: ltr;
+        .image { margin: 0 0 0 15px; }
+      }
+    }
+
+  }
+  #navbar {
+    .dropdown-menu {
+      right: 0;
+      left: unset;
+      &:before {
+        content: "";
+        border-color: transparent !important;
+      }
+      a {
+        text-align:right !important;
+        display: block;
+        svg { margin: 0 8px }
+      }
+    }
+    .right-links-container {
+      .dropdown-menu {
+        right: -280px;
+      }
+      .dropdown-user {
+        .top-part {
+          direction: ltr;
+          text-align: left;
+          a { text-align: left !important }
+        }
+      }
+    }
+  }
+
+  .assigning-contractors {
+    left: 66% !important
+  }
+
+}

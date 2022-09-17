@@ -1,0 +1,102 @@
+@import "../../assets/css/helper";
+
+#navbar {
+  @include flexBox(space-between);
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 25px;
+  .default-links-ul {
+    @include flexBox(flex-start, center);
+    li {
+      position: relative;
+      .dropdown-menu {
+        position: absolute;
+        display: none;
+        width: 329px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #fff;
+        top: 43px;
+        z-index: 10000;
+        box-shadow: 0 2px 5px #ddd;
+        &:hover {
+          display: block;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          top: -19px;
+          left: 41px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent #fff transparent;
+        }
+        a {
+          display: block;
+          padding: 6px 15px;
+          border-radius: 5px;
+          &:hover {
+            background-color: rgb(218 106 255 / 32%);
+          }
+        }
+      }
+      &:hover .dropdown-menu {
+        display: block;
+      }
+      &.disable-sidebar {
+        margin-right: 15px;
+        cursor: pointer;
+      }
+    }
+    .nav-link {
+      @include transition();
+      padding: 10px 18px;
+      border-radius: 5px;
+      font-weight: 400;
+
+      &:hover {
+        background-color: rgb(218 106 255 / 32%);
+      }
+    }
+  }
+  .right-links {
+    li {
+      .dropdown-menu {
+        right: 0;
+        &:before { content: ""; left: 294px; }
+        &.dropdown-user {
+          .top-part {
+            @include flexBox(flex-start, center);
+            padding: 10px;
+            border-bottom: 1px solid #f1f1f1;
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 8px;
+              margin-right: 18px;
+            }
+            a {
+              color: $blue-dark !important;
+              padding: 0;
+              margin: 0;
+              &:hover { background-color: transparent; color: $blue-light; }
+            }
+          }
+          .links {
+            padding: 10px 0 0;
+            a {
+              color: #333;
+              svg { margin-right: 10px }
+              &.red-link { color: $red-light; font-weight: bold; &:hover { background-color: rgb(229 18 18 / 15%) } }
+
+            }
+            .divider { border-top: 1px solid #f1f1f1; margin: 10px 0 }
+          }
+        }
+        &.dropdown-theme, &.dropdown-lang {
+          svg { margin-right: 8px }
+        }
+      }
+    }
+  }
+}

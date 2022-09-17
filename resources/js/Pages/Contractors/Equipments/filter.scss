@@ -1,0 +1,58 @@
+@import "../../../assets/css/helper";
+
+.contractor-data-filter {
+  .filter-select-container {
+    > h1 {
+      margin: 10px 0 !important;
+      font-size: 22px !important;
+    }
+    .filter {
+      @include flexBox(flex-start, center);
+      gap: 10px;
+      > div { flex: 1; }
+    }
+  }
+  .choose-month {
+    @include flexBox(space-between);
+    margin-top: 15px;
+    gap: 5px;
+    flex-wrap: wrap;
+    .month {
+      @include boxShadow(3px);
+      cursor: pointer;
+      text-align: center;
+      flex: 1;
+      background-color: #FFF;
+      padding: 10px;
+      border-radius: 5px;
+      svg { margin: 0 5px; }
+      &:hover {
+        background-color: #f1f1f1;
+      }
+      &:active {
+        background-color: $blue-dark;
+        color: #FFF !important;
+      }
+      &.active {
+        background-color: $blue-dark;
+        color: #FFF;
+        &:hover { color: #FFF !important; }
+      }
+    }
+  }
+}
+
+.no-data-grid {
+  background-color: #FFF;
+  text-align: center;
+  padding: 25px 0;
+  h1 {
+    font-size: 25px;
+    margin: 10px 0 0 !important ;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 200px;
+  }
+}

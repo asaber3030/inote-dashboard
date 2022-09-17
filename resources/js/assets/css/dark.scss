@@ -1,0 +1,299 @@
+@import './helper';
+
+
+$dark-navbar-bg: #222;
+$dark-body-bg: #111;
+$dark-lighter-bg: #333;
+
+.app-body-dark {
+  background-color: $dark-body-bg;
+  #sidebar {
+    background-color: $dark-navbar-bg;
+    border-right: 1px solid $dark-lighter-bg;
+    .sidebar-sublinks a:hover { background-color: #111 !important; }
+  }
+  #navbar {
+    background-color: $dark-navbar-bg;
+    border-bottom-color: $dark-lighter-bg;
+    svg { color: gray; }
+    a { color: gray; &:hover { background-color: $dark-lighter-bg !important; color: lightgray !important; } }
+    .dropdown-menu {
+      @include boxShadow(3px, $dark-body-bg);
+      border: none;
+      background-color: $dark-body-bg !important;
+      &:before { border-color: transparent transparent $dark-body-bg transparent !important; }
+    }
+    .dropdown-user {
+      h6 { color: lightgray !important; }
+      .text a { &:hover { background-color: transparent !important } }
+      .links { a { color: gray !important; } }
+      .top-part { border-bottom-color: $dark-navbar-bg !important; }
+      .divider { border-color: $dark-navbar-bg !important }
+    }
+  }
+
+
+
+  // Any Heading
+  h1,h2,h3,h4,h5,h6 { color: gray !important; border-bottom-color: #222 !important }
+
+  // Layout-header
+  .layout-header {
+    border-bottom-color: #222 !important;
+  }
+
+  // Data grid tables
+  .MuiDataGrid-main,
+  .MuiDataGrid-footerContainer { background-color: $dark-navbar-bg; color: lightgray; }
+  .MuiDataGrid-footerContainer { border-color: #333; color: lightgray !important; .MuiTablePagination-root { color: lightgray; svg { color: lightgray !important } } }
+  .MuiDataGrid-root {
+    box-shadow: none !important;
+    border-color: #333;
+  }
+  .MuiDataGrid-cell, .MuiDataGrid-columnHeader, .MuiDataGrid-columnHeaders { border-color: #333 !important;  }
+  .MuiDataGrid-main {
+    box-shadow: none !important;
+  }
+
+  // Custom tables
+  table, .table {
+    background-color: #222 !important;
+    box-shadow: none !important;
+    th { color: lightgray }
+    td { color: gray }
+    .btn { background-color: #333; border-color: #333; }
+    .row-tr:hover { background-color: #111 !important; }
+  }
+
+  // No-data container
+  .no-data {
+    background-color: #222;
+    @include boxShadow(3px, #111);
+  }
+
+  // Custom Inputs
+  label { color: lightgray; }
+  .custom-input-user, select {
+    background-color: #222;
+    border-color: #333 !important;
+    color: gray;
+    &:disabled { background-color: #333 !important }
+  }
+
+  // stores-list
+  .stores-list, .listing-layout {
+    > div { border-top-color: #222 !important; }
+  }
+
+  // Input File style
+  .form-file-group {
+    background-color: #222;
+    box-shadow: 0 2px 3px #111 !important;
+    svg { color: #666 }
+  }
+
+  // Delete & Restore Alert
+  .set-status-container {
+    background-color: #222;
+    box-shadow: 0 2px 8px #111 !important;
+    border-color: #333;
+  }
+
+  // Displaying materials
+  .materials {
+    .material {
+      background-color: #222;
+      box-shadow: 0 2px 3px #000;
+      p { border-color: #333 }
+      li span:first-of-type { color: lightgray }
+      .material-actions {
+        border-color: #333;
+        padding: 15px 0 0;
+        a { background-color: #333; border-color: #333; color: gray; &:hover { background-color: #111; color: lightgray !important; border-color: #111; } }
+      }
+    }
+  }
+
+  // All-sheets
+  .all-sheets-container {
+    .sheet {
+      background-color: #222 !important;
+      box-shadow: 0 2px 3px #111 !important;
+      &:hover{ background-color: $blue-dark !important; h1, p { color: #fff !important } }
+    }
+  }
+
+  // Create-sheet
+  .create-sheet {
+    .left-steps {
+      li {
+        @include boxShadow(10px, #111);
+        background-color: #222;
+        color: lightgray;
+        &:hover { background-color: $blue-dark; color: #FFF !important; svg { color: #FFF; } }
+      }
+    }
+    .right-steps {
+      @include boxShadow(5px, #111);
+      background-color: #222;
+      ul {
+        li { color: lightgray !important }
+      }
+      .step-1 {
+        .sheets-type {
+          > div {
+            @include boxShadow(3px, #111);
+            background-color: #333;
+            color: lightgray;
+          }
+          &.active { background-color: red !important }
+        }
+      }
+      .step-3 {
+        .tabs-list-ul {
+          li {
+            background-color: #333;
+            @include boxShadow(5px, #111);
+            &:not(:last-of-type) { border-bottom-color: #333 !important; }
+          }
+        }
+      }
+      .step-4 {
+        ul {
+          li {
+            padding: 10px;
+            &:not(:last-of-type) { border-bottom-color: #333 !important; }
+          }
+        }
+      }
+    }
+  }
+
+  // Profile
+  .profile-content {
+    .profile-sidebar {
+      @include boxShadow(3px, #111);
+      background-color: #222;
+    }
+    .left-items {
+      .top-data {
+        @include boxShadow(3px, #111);
+        background-color: #222;
+      }
+      .timeline-data {
+        .timeline-one {
+          @include boxShadow(3px, #111);
+          background-color: #222;
+          border-bottom: none;
+        }
+      }
+      .app-database {
+        li {
+          background-color: #222;
+          border-bottom-color: transparent;
+          span:first-of-type { color: $light-gray }
+          @include boxShadow(3px, #111);
+        }
+        .alert {
+          box-shadow: none !important;
+        }
+      }
+      .app-tables {
+        tr, td, th { border-color: #333; }
+      }
+    }
+    .right-items {
+      @include boxShadow(3px, #111);
+      background-color: #222;
+      a {
+        background-color: #333 !important;
+        border: none !important;
+        color: lightgray;
+        &:hover { color: $blue-dark !important }
+      }
+      li span:first-of-type { color: lightgray }
+    }
+  }
+
+  .contractors-list > div { border-top-color: #333 !important }
+
+  table {
+    box-shadow: none !important;
+  }
+
+  .sheet-type.active { background-color: #111 !important }
+
+  .contractor-information {
+    .items-information {
+      background-color: #222 !important;
+      box-shadow: 0 2px 5px #000 !important;
+      li {
+        border-bottom-color: #333 !important;
+        span:first-of-type { color: lightgray; }
+      }
+    }
+  }
+
+  .choose-month {
+    .month {
+      background-color: #222 !important;
+      color: lightgray;
+      box-shadow: 0 2px 10px #000 !important;
+      &:hover { color: lightgray !important; background-color: $blue-dark !important; }
+      &.active { background-color: $blue-dark !important }
+    }
+  }
+
+  .no-data-grid {
+    background-color: #222 !important;
+    color: lightgray !important
+  }
+  .add-custom-sheet {
+    .left-filter {
+      li {
+        background-color: #222;
+        box-shadow: 0 2px 5px #000;
+        color: lightgray;
+      }
+    }
+    .create-sheet-btn-container {
+      border-top-color: #333 !important;
+    }
+  }
+
+  .sheet-info-float {
+    background-color: #222 !important;
+    box-shadow: 0 2px 5px #000 !important;
+    li {
+      color: lightgray !important;
+      border-color: #333 !important
+    }
+  }
+
+
+  .set-status-container, .engineers-list {
+    border-color: #333 !important;
+    > div {
+      border-color: #333 !important;
+    }
+  }
+
+  .assigning-contractors {
+    left: 67% !important;
+  }
+
+  .dropdown-menu {
+    box-shadow: 0 2px 10px #111 !important;
+    border: 1px solid #222 !important;
+  }
+
+  .filters {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .no-data, .info {
+    color: lightgray;
+  }
+}
+

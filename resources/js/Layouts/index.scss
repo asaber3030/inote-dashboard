@@ -1,0 +1,36 @@
+@import "../assets/css/helper";
+
+.website-layout {
+  @include flexBox();
+  flex-wrap: wrap;
+  .left {
+    width: 13%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000;
+  }
+  .right {
+    width: 100%;
+    .page-content {
+      padding: 15px 180px;
+      .layout-header {
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e5e5;
+        @include flexBox(space-between, center);
+        .btn {
+          margin-left: 3px !important;
+        }
+        h1 {
+          font-size: 30px;
+          color: #333;
+          font-weight: 600;
+        }
+        .data-actions {
+          a:hover { color: #FFF !important; }
+        }
+      }
+    }
+  }
+}

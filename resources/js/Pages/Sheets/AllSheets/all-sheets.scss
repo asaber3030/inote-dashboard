@@ -1,0 +1,32 @@
+.all-sheets-container {
+  margin-top: 15px;
+  .sheets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .sheet {
+      background-color: #FFF;
+      text-align: center;
+      padding: 25px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 3px #ddd;
+      cursor: not-allowed;
+      user-select: none;
+      transition: 0.3s ease-in-out;
+      &.completed {
+        cursor: pointer;
+        &:hover { background-color: #15548b; color: #FFF; p { color: #FFF; } }
+      }
+      img {
+        width: 150px;
+        margin: 10px auto;
+      }
+      h1 {
+        font-size: 25px;
+      }
+      p {
+        color: gray;
+      }
+    }
+  }
+}

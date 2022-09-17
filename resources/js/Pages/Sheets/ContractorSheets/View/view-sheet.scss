@@ -1,0 +1,20 @@
+@import "../../../../assets/css/helper";
+
+.sheets-container {
+  .sheet-info-float {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #FFF;
+    margin: 10px 0;
+    @include boxShadow();
+    ul {
+      li {
+        @include flexBox(space-between);
+        padding: 10px;
+        &:not(:last-of-type) { border-bottom: 1px solid #f1f1f1; }
+        span:last-of-type { font-weight: bold; a { color: $blue-dark; &:hover { color: $blue-light !important; text-decoration: underline } } }
+      }
+    }
+  }
+
+}

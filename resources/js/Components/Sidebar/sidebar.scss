@@ -1,0 +1,53 @@
+@import "../../assets/css/helper";
+
+#sidebar {
+  color: #FFF;
+  overflow: auto;
+  .sidebar-top {
+    @include flexBox(flex-start, center);
+    padding: 15px;
+    border-bottom: 1px solid #111;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      margin-right: 15px;
+    }
+    span {
+      font-size: 13px;
+      color: gray;
+    }
+  }
+  .sidebar-content {
+    padding: 10px;
+    a { display: block; }
+    .sidebar-sublinks {
+      padding: 0 15px;
+      display: none;
+    }
+    .sidebar-link {
+      @include transition();
+      @include flexBox(space-between, center);
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      svg:first-child { margin: 0 8px }
+      &:hover {
+        background-color: #111;
+      }
+    }
+    .sub-link {
+      padding: 5px 38px;
+      margin: 5px 0;
+      border-radius: 5px;
+      svg { margin: 0 6px !important }
+      &:hover {
+        background-color: #222;
+      }
+    }
+  }
+}
+
+.invert-image {
+  filter: invert(1);
+}

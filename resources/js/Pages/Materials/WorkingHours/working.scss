@@ -1,0 +1,34 @@
+.filter-months {
+  padding: 10px 0;
+  h1 {
+    font-size: 22px;
+    margin: 10px 0 !important;
+    font-weight: bold;
+  }
+  .filters {
+    box-shadow: 0 2px 3px #ddd;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #FFF;
+    gap: 5px;
+    > div {
+      flex: 1;
+      align-items: center;
+
+      display: flex;
+      gap: 10px;
+      > div {
+        flex: 1;
+      }
+      input, select {
+        width: 100%;
+      }
+    }
+    .with-month-day {
+      .has-btn { flex: .2; }
+      flex: 2;
+    }
+  }
+}

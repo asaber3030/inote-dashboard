@@ -1,0 +1,284 @@
+@import "helper";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+body {
+  padding-left: 13%;
+  background-color: #f1f1f1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0 !important;
+  line-height: 1;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+a:hover {
+  color: inherit !important;
+}
+
+select {
+  border-color: rgb(209 213 219 / 100%) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+a.btn:hover { color: #FFF !important;  }
+
+.set-status-container {
+  @include boxShadow(3px);
+  background-color: #FFF;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  border: 1px solid #e5e5e5;
+  .title {
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 10px;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  p {
+    padding: 10px 18px;
+    color: #666;
+  }
+  button {
+    margin-left: 18px;
+  }
+}
+
+.form-container {
+  margin: 10px 0;
+  padding: 8px 0;
+  .form-group {
+    &:not(:last-of-type) {
+      margin: 0 0 15px;
+    }
+    input { width: 100% }
+    input:disabled { background-color: #e5e5e5; cursor: not-allowed }
+    label { font-weight: bold }
+    .error-input { font-weight: bold }
+  }
+}
+.actions {
+  text-align: center !important;
+  @include flexBox(center!important);
+  button {
+  }
+  a {
+    margin: 0 3px;
+    border-radius: 3px;
+    background-color: #333 !important;
+    padding: 5px 10px;
+    border: none;
+    &:hover {
+      background-color: #555 !important;
+      color: #FFF !important;
+    }
+  }
+}
+.MuiDataGrid-row {
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.export-button {
+  margin: 10px 0;
+  float: right;
+}
+
+.table-container {
+  margin: 10px 0;
+}
+
+.MuiDataGrid-root {
+  background-color: #FFF;
+  border-radius: 8px !important;
+  overflow: hidden;
+  @include boxShadow(3px);
+}
+.MuiDataGrid-columnHeaderTitle {
+  font-weight: bold !important;
+}
+.MuiDataGrid-cell {
+  border-right: 1px solid #ddd;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin: auto;
+  }
+  .badge {
+    margin-right: 5px;
+  }
+  .size-badge {
+    padding: 6px 15px;
+    color: gray;
+    border-radius: 0;
+    font-size: 10px;
+    background-color: transparent;
+    border: 1px solid #ddd !important;
+  }
+  .no-design {
+    color: $red-dark;
+  }
+}
+.MuiDataGrid-columnHeaderTitleContainer {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+.MuiDataGrid-iconSeparator {
+  display: none !important;
+}
+.MuiDataGrid-columnHeader {
+  border-right: 1px solid #ddd;
+}
+
+.form-file-group {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 10px;
+  background-color: #FFF;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  @include boxShadow();
+  svg { font-size: 40px; margin: 10px 0 }
+  label {
+    font-size: 18px;
+  }
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10000;
+  }
+}
+
+.assigning-contractors {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  top: 20%;
+  left: 33%;
+  z-index: 1000000000000000000;
+  .content {
+    position: fixed;
+    min-width: 900px;
+    z-index: 100010000;
+    background-color: #FFF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    .actions-assigning {
+      @include flexBox(space-between, center);
+      border-bottom: 1px solid #f1f1f1;
+      padding: 10px 0;
+      h1 {
+        font-size: 18px;
+      }
+      div {
+        @include flexBox();
+        gap: 5px;
+      }
+    }
+    ul {
+      padding: 10px 0;
+      hr { border-color: #ddd; }
+      li {
+        a {
+          display: block;
+          padding: 10px;
+          border-radius: 5px;
+          svg { margin-right: 8px; }
+          &:hover {
+            background-color: #f1f1f1;
+          }
+          &.disabled { cursor: not-allowed; color: gray; &:hover { color: gray !important; background-color: transparent } }
+        }
+      }
+    }
+  }
+  .background-layer {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer; /* Add a pointer on hover */
+  }
+}
+
+.export-actions {
+  margin-top: 10px;
+  float: right;
+  @include flexBox();
+  gap: 3px;
+
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 2.9px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  transform: translateX(17px);
+}
+
+.MuiAlert-standardSuccess  {
+  background-color: $green-dark !important;
+  color: #183217;
+  font-weight: 600;
+  svg { color: #183217 }
+}

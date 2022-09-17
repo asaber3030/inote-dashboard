@@ -1,0 +1,33 @@
+@import "../../assets/css/helper";
+
+.default-btn {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-weight: bold;
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+.default-btn.primary {
+  background-color: $blue-dark;
+  color: #FFF;
+}
+
+.default-btn.warning {
+  background-color: $yellow-light;
+  color: #FFF;
+}
+
+.default-btn.danger {
+  background-color: $red-light;
+  color: #FFF;
+}
+
+.default-btn.dark {
+  background-color: $wet-dark;
+  color: #FFF;
+}
+

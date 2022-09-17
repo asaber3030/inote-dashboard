@@ -1,0 +1,182 @@
+@import '../../../../assets/css/helper';
+
+.create-sheet {
+  display: grid;
+  grid-template-columns: 27% 71%;
+  gap: 30px;
+  margin-top: 10px;
+  .left-steps {
+    border-radius: 5px;
+    height: fit-content;
+    .h1-steps {
+      padding: 0 0 10px 10px;
+      text-align: center;
+      font-size: 25px;
+    }
+    ul {
+      li {
+        padding: 10px;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px 0;
+        &:hover {
+          background-color: #fff;
+          box-shadow: 0 2px 3px #ddd;
+        }
+        &.active { box-shadow: 0 2px 3px #ddd; background-color: $blue-dark; color: #FFF; svg { color: #FFf; } &:hover { background-color: $blue-dark; } }
+        svg {
+          font-size: 20px;
+          display: block;
+          margin: 10px auto;
+          color: gray;
+        }
+      }
+    }
+  }
+  .right-steps {
+    @include boxShadow(3px);
+    padding: 10px 30px;
+    height: fit-content;
+    background-color: #FFF;
+    border-radius: 5px;
+    .heading {
+      font-size: 25px;
+      margin: 10px 0 !important;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .disable {
+      display: none !important;
+    }
+    .display-desc {
+      h1 {
+        margin: 10px 0 !important;
+        font-size: 18px;
+      }
+      p {
+        color: gray;
+        padding: 0 10px;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: dot;
+        padding: 10px 30px;
+        li {
+          line-height: 2;
+        }
+      }
+    }
+    .next-step-btn-container {
+      margin-left: 10px;
+    }
+    .sheets-type {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+      .sheet-type {
+        @include boxShadow(4px);
+        @include flexBox(center, center);
+        gap: 15px;
+        background-color: #fff;
+        flex: 1;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        svg { margin-right: 10px; }
+        &.active {
+          background-color: $blue-dark;
+          color: #FFF;
+          &:hover { background-color: $blue-dark; }
+        }
+        &:hover { background-color: $blue-dark; color: #FFF; }
+      }
+    }
+
+    .step-3, .step-4 {
+      .contractor-data-show {
+        margin: 10px 0;
+        border-radius: 4px;
+        hr {
+          border-color: #ddd;
+          margin: 3px 5px;
+        }
+        li {
+          @include flexBox(space-between, center);
+          padding: 5px;
+          span:last-of-type { font-weight: bold; color: #666 }
+        }
+      }
+      .tabs-list-ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        align-content: center;
+        align-items: center;
+        li {
+          @include boxShadow(4px);
+          cursor: pointer;
+          padding: 10px;
+          border-radius: 5px;
+          text-align: center;
+          background-color: $blue-dark;
+          color: #FFF;
+          svg { margin-right: 10px; }
+          &.active {
+            color: #FFF;
+            background-color: $blue-light;
+          }
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+      .tabs-content {
+        padding: 10px 0 0;
+        .tab-content {
+          padding: 10px 0;
+          .heading-tab {
+            font-size: 19px;
+            color: #555;
+          }
+        }
+      }
+    }
+
+    .step-4 {
+      li {
+        @include flexBox(space-between, center);
+        padding: 5px;
+        &:not(:last-of-type) { border-bottom: 1px solid #f1f1f1; }
+        span:last-of-type { font-weight: bold; color: #666 }
+        a { color: $blue-dark; &:hover { color: $blue-light !important; } }
+      }
+      .next-stepbtn {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+.today-tab-content {
+  padding: 10px;
+  h3 {
+    font-size: 17px;
+  }
+  .header {
+
+    @include flexBox(space-between, center);
+  }
+}
+
+.next-stepbtn {
+  margin: 0 10px 0;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
