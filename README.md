@@ -1,3 +1,23 @@
+# INote-Dashboard
+
+### Used Frameworks & Plugins
+1. Laravel 9
+2. React
+3. Inertia
+4. Material-UI
+
+### Features
+1. Arabic & English
+2. Light & Dark Mode
+3. Printing Data 
+4. Creating Sheets
+5. Control website
+6. Stores 
+7. High Performance
+8. Custom language conversion
+
+<hr />
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
