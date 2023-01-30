@@ -1,4 +1,5 @@
 # INote-Dashboard
+An Application for contractors and engineers to control entry data and creating sheets with specified dates for the money taken from the company and used materials from stores.
 
 ### Used Frameworks & Plugins
 1. Laravel 9
